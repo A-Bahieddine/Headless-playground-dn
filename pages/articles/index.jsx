@@ -26,7 +26,8 @@ export default function SSRArticlesListTemplate({
 				languageAlternates={hrefLang || false}
 			/>
 			<PageHeader title="Articles" />
-			<section>
+		
+			 <section>
 				<ArticleGrid
 					data={sortedArticles}
 					contentType="articles"
@@ -35,6 +36,7 @@ export default function SSRArticlesListTemplate({
 				/>
 			</section>
 		</Layout>
+	
 	);
 }
 
@@ -56,6 +58,7 @@ export async function getServerSideProps(context) {
 
 		const articles = await store.getObject({
 			objectName: 'node--article',
+			
 			res: context.res,
 			refresh: true,
 			params: 'include=field_media_image.field_media_image',
@@ -80,7 +83,6 @@ export async function getServerSideProps(context) {
 			key: 'changed',
 			direction: 'desc',
 		});
-
 		return {
 			props: {
 				sortedArticles,
@@ -89,6 +91,8 @@ export async function getServerSideProps(context) {
 				footerMenu,
 			},
 		};
+
+		
 	} catch (error) {
 		console.error('Unable to fetch data for article page: ', error);
 		return {

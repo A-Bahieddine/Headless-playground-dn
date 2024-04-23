@@ -68,8 +68,10 @@ export async function getServerSideProps(context) {
 			res: context.res,
 			anon: context.preview ? false : true,
 		});
+
 	} catch (error) {
 		// retry the fetch with `/pages` prefix
+		// console.log("Errorrrrrrrr",error);
 		page = await store.getObjectByPath({
 			objectName: 'node--page',
 			// note: pages are not prefixed by default.
@@ -79,6 +81,7 @@ export async function getServerSideProps(context) {
 			res: context.res,
 			anon: context.preview ? false : true,
 		});
+		// console.log("aaaaaaaaaaaaaaaaaaaaaaaaaaa",page);
 	}
 
 	const footerMenu = await store.getObject({
