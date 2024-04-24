@@ -9,8 +9,11 @@ import {
 import Link from 'next/link';
 import Layout from '../../components/layout';
 import styles from './page.module.css';
-
+import Hero from '../../components/hero';
+import Slider from '../../components/slider';
 export default function PageTemplate({ page, footerMenu, hrefLang, preview }) {
+	const components = page.field_components;
+	// console.log(page)
 	return (
 		<Layout preview={preview} footerMenu={footerMenu}>
 			<NextSeo
@@ -29,6 +32,18 @@ export default function PageTemplate({ page, footerMenu, hrefLang, preview }) {
 					className={styles.content}
 					dangerouslySetInnerHTML={{ __html: page.body.processed }}
 				/>
+				<div className='components'>
+			
+								{components.map(comp => {
+								if(comp.type == 'paragraph--hero'){
+									return <Hero   key = {comp.id} component = {comp}/>
+								}else if (comp.type == 'paragraph--slider') {
+									return <Slider   key = {comp.id} component = {comp}/>
+								}
+							})}					
+					
+				
+				</div>
 			</article>
 		</Layout>
 	);
@@ -44,9 +59,9 @@ export async function getServerSideProps(context) {
 	const alias = `${context.params.alias
 		.map((segment) => `/${segment}`)
 		.join('')}`;
-
+    const params = 'include=field_media_image.field_media_image,field_components';
 	const previewParams =
-		context.preview && (await getPreview(context, 'node--page'));
+		context.preview && (await getPreview(context, 'node--page', params));
 
 	if (previewParams?.error) {
 		return {
@@ -63,25 +78,24 @@ export async function getServerSideProps(context) {
 			objectName: 'node--page',
 			// note: pages are not prefixed by default.
 			path: `${multiLanguage ? lang : ''}${alias}`,
-			params: context.preview && previewParams,
+			params: context.preview ? previewParams : params,
 			refresh: true,
 			res: context.res,
 			anon: context.preview ? false : true,
 		});
 
+
 	} catch (error) {
 		// retry the fetch with `/pages` prefix
-		// console.log("Errorrrrrrrr",error);
 		page = await store.getObjectByPath({
 			objectName: 'node--page',
 			// note: pages are not prefixed by default.
 			path: `${multiLanguage ? lang : ''}/pages${alias}`,
-			params: context.preview && previewParams,
+			params: context.preview ? previewParams : params,
 			refresh: true,
 			res: context.res,
 			anon: context.preview ? false : true,
 		});
-		// console.log("aaaaaaaaaaaaaaaaaaaaaaaaaaa",page);
 	}
 
 	const footerMenu = await store.getObject({
@@ -91,6 +105,7 @@ export async function getServerSideProps(context) {
 		anon: true,
 	});
 
+     
 	const origin = process.env.NEXT_PUBLIC_FRONTEND_URL;
 	// Load all the paths for the current page content type.
 	const paths = locales.map(async (locale) => {
@@ -119,13 +134,12 @@ export async function getServerSideProps(context) {
 			};
 		});
 	});
-
 	return {
 		props: {
 			page,
 			footerMenu,
 			hrefLang,
-			preview: Boolean(context.preview),
+			preview: Boolean(context.preview)
 		},
 	};
 }
