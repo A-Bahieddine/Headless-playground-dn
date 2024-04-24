@@ -29,7 +29,8 @@ export const ArticleGridItem = ({
 					{imgSrc !== '' ? (
 						<Image
 							src={IMAGE_URL + imgSrc}
-							fill
+							width={300}
+							height={300}
 							style={{ objectFit: 'cover' }}
 							alt={article.title}
 						/>

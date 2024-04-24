@@ -54,3 +54,6 @@ p {
 .medium {
     font-weight: 500;
 }
+.relative {
+    position: relative;
+}
