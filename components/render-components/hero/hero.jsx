@@ -3,7 +3,6 @@ import { IMAGE_URL } from '../../../lib/constants';
 import styles from './hero.module.css';
 export const Hero = ({ component }) => {
 	const imgSrc = component?.field_image?.field_media_image?.uri?.url || '';
-	console.log(component);
 	return (
 		<section
 			className={styles.hero}
