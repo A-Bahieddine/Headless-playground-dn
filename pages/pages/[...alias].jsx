@@ -5,26 +5,25 @@ import {
 	getCurrentLocaleStore,
 	globalDrupalStateStores,
 } from '../../lib/stores';
-
+import RenderComponents from '../../components/render-components/render-components';
 import Link from 'next/link';
 import Layout from '../../components/layout';
 import styles from './page.module.css';
-import Hero from '../../components/render-components/hero/hero';
-import Slider from '../../components/slider';
+
 export default function PageTemplate({ page, footerMenu, hrefLang, preview }) {
 	const components = page.field_components;
 	function buildMenuHierarchy(menuItems) {
 		// This function converts the flat list into a tree structure based on the 'parent' attribute.
 		let menuTree = [];
 		let menuMap = {};
-	
+
 		// First, transform the list into a map for easy lookup.
-		menuItems.forEach(item => {
+		menuItems.forEach((item) => {
 			menuMap[item.id] = { ...item, children: [] };
 		});
-	
+
 		// Then, build the tree by adding children to their respective parents.
-		menuItems.forEach(item => {
+		menuItems.forEach((item) => {
 			if (item.parent) {
 				// The parent ID is not empty, add this item to its parent's 'children' array.
 				if (menuMap[item.parent]) {
@@ -35,10 +34,10 @@ export default function PageTemplate({ page, footerMenu, hrefLang, preview }) {
 				menuTree.push(menuMap[item.id]);
 			}
 		});
-	
+
 		return menuTree;
 	}
-	buildMenuHierarchy(footerMenu)
+	buildMenuHierarchy(footerMenu);
 	return (
 		<Layout preview={preview} footerMenu={footerMenu}>
 			<NextSeo
@@ -55,19 +54,10 @@ export default function PageTemplate({ page, footerMenu, hrefLang, preview }) {
 				</Link>
 				<div
 					className={styles.content}
-					dangerouslySetInnerHTML={{ __html: page.body.processed }}
+					dangerouslySetInnerHTML={{ __html: page.body?.processed }}
 				/>
-				<div className='components'>
-			
-								{components.map(comp => {
-								if(comp.type == 'paragraph--hero'){
-									return <Hero   key = {comp.id} component = {comp}/>
-								}else if (comp.type == 'paragraph--slider') {
-									return <Slider   key = {comp.id} component = {comp}/>
-								}
-							})}					
-					
-				
+				<div className="components">
+					<RenderComponents components={components} />
 				</div>
 			</article>
 		</Layout>
@@ -84,10 +74,10 @@ export async function getServerSideProps(context) {
 	const alias = `${context.params.alias
 		.map((segment) => `/${segment}`)
 		.join('')}`;
-    const params = 'include=field_media_image.field_media_image,field_components,field_components.field_image.field_media_image,field_components.field_slide';
+	const params =
+		'include=field_media_image.field_media_image,field_components,field_components.field_image.field_media_image,field_components.field_slide';
 	const previewParams =
 		context.preview && (await getPreview(context, 'node--page', params));
-
 	if (previewParams?.error) {
 		return {
 			redirect: {
@@ -108,8 +98,6 @@ export async function getServerSideProps(context) {
 			res: context.res,
 			anon: context.preview ? false : true,
 		});
-
-
 	} catch (error) {
 		// retry the fetch with `/pages` prefix
 		page = await store.getObjectByPath({
@@ -130,7 +118,6 @@ export async function getServerSideProps(context) {
 		anon: true,
 	});
 
-     
 	const origin = process.env.NEXT_PUBLIC_FRONTEND_URL;
 	// Load all the paths for the current page content type.
 	const paths = locales.map(async (locale) => {
@@ -164,7 +151,7 @@ export async function getServerSideProps(context) {
 			page,
 			footerMenu,
 			hrefLang,
-			preview: Boolean(context.preview)
+			preview: Boolean(context.preview),
 		},
 	};
 }

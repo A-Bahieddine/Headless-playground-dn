@@ -78,7 +78,8 @@ export async function getServerSideProps(context) {
 			objectName: 'node--page',
 			refresh: true,
 			res: context.res,
-			params: 'fields[node--page]=id,title,body,path,field_image,field_media_image&include=field_image.field_media_image,field_media_image.field_media_image',
+			params:
+				'fields[node--page]=id,title,body,path,field_image,field_media_image&include=field_image.field_media_image,field_media_image.field_media_image',
 			// params:'include=field_media_image'
 			anon: true,
 		});
