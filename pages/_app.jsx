@@ -1,7 +1,7 @@
 import '@pantheon-systems/nextjs-kit/style.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import '../styles/global.css';
-import '../styles/hero.css';
+// import '../styles/hero.css';
 
 function App({ Component, pageProps }) {
 	// make sure we don't output invalid `hrefLang` values
