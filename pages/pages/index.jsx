@@ -33,7 +33,7 @@ export default function PageListTemplate({
 						{sortedPages?.map(({ id, title, body, path }) => (
 							<li key={id}>
 								<h2>{title}</h2>
-								{body.summary ? (
+								{body?.summary ? (
 									<div dangerouslySetInnerHTML={{ __html: body?.summary }} />
 								) : null}
 								<Link
