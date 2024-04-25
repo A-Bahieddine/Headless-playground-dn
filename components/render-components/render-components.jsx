@@ -1,7 +1,7 @@
 import Hero from './hero/hero';
 import Slider from './slider/slider';
+import Grid from './grid-cards/grid-card';
 export const RenderComponents = ({ components }) => {
-	console.log(components);
 	return (
 		<div className="main">
 			{components.map((component) => {
@@ -9,6 +9,9 @@ export const RenderComponents = ({ components }) => {
 					return <Hero key={component.id} component={component} />;
 				} else if (component.type == 'paragraph--slider') {
 					return <Slider key={component.id} component={component} />;
+				}
+				else if (component.type == 'paragraph--two_cards') {
+					return <Grid key={component.id} component={component} />;
 				}
 			})}
 		</div>

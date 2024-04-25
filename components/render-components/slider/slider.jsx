@@ -1,4 +1,5 @@
 export const Slider = ({ component }) => {
+	console.log(component,"mohamed")
 	return (
 		<section className="Slider">
 			<div className="container">

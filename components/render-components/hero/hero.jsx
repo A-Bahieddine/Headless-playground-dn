@@ -22,6 +22,10 @@ export const Hero = ({ component }) => {
 								__html: component.field_hero_text.processed,
 							}}
 						></div>
+
+						<div>
+							{component.field_test_text}
+						</div>
 					</div>
 					<div className="col-lg-6 col-12">
 						<Image

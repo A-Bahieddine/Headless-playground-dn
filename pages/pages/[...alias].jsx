@@ -75,7 +75,7 @@ export async function getServerSideProps(context) {
 		.map((segment) => `/${segment}`)
 		.join('')}`;
 	const params =
-		'include=field_media_image.field_media_image,field_components,field_components.field_hero_background.field_media_image,field_components.field_image.field_media_image,field_components.field_slide';
+		'include=field_media_image.field_media_image,field_components,field_components.field_hero_background.field_media_image,field_components.field_image.field_media_image,field_components.field_slide,field_components.field_card,field_components.field_card.field_card_image.field_media_image';
 	const previewParams =
 		context.preview && (await getPreview(context, 'node--page', params));
 	if (previewParams?.error) {
