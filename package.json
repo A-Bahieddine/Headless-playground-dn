@@ -30,6 +30,7 @@
 		"@pantheon-systems/drupal-kit": "4.6.5",
 		"@pantheon-systems/nextjs-kit": "1.7.9",
 		"@tailwindcss/typography": "^0.5.7",
+		"bootstrap": "^5.3.3",
 		"dotenv": "^16.0.2",
 		"next": "13.5.6",
 		"next-seo": "^6.1.0",

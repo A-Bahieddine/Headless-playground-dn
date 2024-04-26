@@ -4,7 +4,6 @@ import Image from 'next/image';
 import { IMAGE_URL } from '../../../lib/constants';
 import styles from './grid-card.module.css';
 export const Card = ({ gridCard }) => {
-    console.log(gridCard, "gridcard");
     const imgSrc = gridCard?.field_card_image?.field_media_image?.uri?.url || '';
     return (
         <div className={`${styles.card}`}>
