@@ -1,6 +1,7 @@
 import { NextSeo } from 'next-seo';
 import { getPreview } from '../../lib/getPreview';
 import { isMultiLanguage } from '../../lib/isMultiLanguage';
+import { PARAMS_PAGE } from '../../lib/constants';
 import {
 	getCurrentLocaleStore,
 	globalDrupalStateStores,
@@ -74,8 +75,7 @@ export async function getServerSideProps(context) {
 	const alias = `${context.params.alias
 		.map((segment) => `/${segment}`)
 		.join('')}`;
-	const params =
-		'include=field_components.field_slide,field_components.field_card,field_components.field_card.field_card_image.field_media_image';
+	const params = PARAMS_PAGE;
 	const previewParams =
 		context.preview && (await getPreview(context, 'node--page', params));
 	if (previewParams?.error) {

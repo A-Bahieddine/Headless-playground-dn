@@ -2,6 +2,7 @@ import { NextSeo } from 'next-seo';
 import { getPreview } from '../lib/getPreview';
 import { isMultiLanguage } from '../lib/isMultiLanguage';
 import { getCurrentLocaleStore, globalDrupalStateStores } from '../lib/stores';
+import { PARAMS_PAGE, FRONT_PATH } from '../lib/constants';
 import Layout from '../components/layout';
 import RenderComponents from '../components/render-components/render-components';
 export default function PageTemplate({ page, footerMenu, hrefLang, preview }) {
@@ -51,9 +52,8 @@ export async function getServerSideProps(context) {
 	const store = getCurrentLocaleStore(lang, globalDrupalStateStores);
 
 	// handle nested alias like /pages/featured
-	const pageID = `/homepage`;
-	const params =
-		'include=field_components.field_slide,field_components.field_card,field_components.field_card.field_card_image.field_media_image';
+	const pageID = FRONT_PATH;
+	const params = PARAMS_PAGE;
 	const previewParams =
 		context.preview && (await getPreview(context, 'node--page', params));
 
