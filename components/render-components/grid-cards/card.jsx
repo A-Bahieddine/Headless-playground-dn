@@ -3,26 +3,27 @@
 import Image from 'next/image';
 import { IMAGE_URL } from '../../../lib/constants';
 import styles from './grid-card.module.css';
-export const Card = ({ card }) => {
-    const imgSrc = card?.field_image?.field_media_image?.uri?.url || '';
-    console.log(card,"Card");
+export const Card = ({ gridCard }) => {
+    console.log(gridCard, "gridcard");
+    const imgSrc = gridCard?.field_card_image?.field_media_image?.uri?.url || '';
     return (
-        <div>
-            {/* <Image
+        <div className={`${styles.card}`}>
+            <Image
                 src={IMAGE_URL + imgSrc}
-                width="450"
-                height="450"
+                width="526"
+                height="400"
+                className={`${styles.card_image}`}
                 alt="image page"
             />
-            <h4 className={`medium-1`}>{card.field_card_title}</h4>
-            <p>{card.field_card_description}</p>
+            <h4 className={`medium-1`}>{gridCard.field_card_title}</h4>
+            <div className={`${styles.card_description}`}
+                dangerouslySetInnerHTML={{
+                    __html: gridCard.field_card_description.value,
+                }}>
+            </div>
             <div className={`${styles.link}`}>
-                <a>{card.field_card_link}</a>
-            </div> */}
-        {
-            console.log(card,"wewew")
-        }
-        
+                <a href="{gridCard.field_card_link.uri}">{gridCard.field_card_link.title}</a>
+            </div>
         </div>
     );
 };

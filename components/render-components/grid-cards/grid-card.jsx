@@ -1,22 +1,22 @@
 import styles from './grid-card.module.css';
-import Card from  './card';
+import Card from './card';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 export const Grid = ({ component }) => {
-    console.log(component,"Grid");
+    const gridNum = 12 / component.field_grid_number;
     return (
         <section className={`${styles.cards}`}>
-            <div className="container">
-                <div className={`row justify-content-around`}>
-                    {component.field_card.map((card) => {
-                        
-                        <div key={card.id} className="col-lg-6 col-12">
-                            <Card card={card} />
-                        </div>
-                    })}
-                    
-                    
-                </div>
-            </div>
-        </section>
+            <Container>
+                <Row>
+                    {component.field_card.map((card) => (
+                        <Col key={card.id} lg={`${gridNum}`} md={6} sm={12}>
+                            <Card gridCard={card} />
+                        </Col>
+                    ))}
+                </Row>
+            </Container>
+        </section >
     );
 };
 

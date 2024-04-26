@@ -1,11 +1,14 @@
+import Slide from "./slide";
+
 export const Slider = ({ component }) => {
-	console.log(component,"mohamed")
+
 	return (
 		<section className="Slider">
 			<div className="container">
 				<h2>Slider Component</h2>
 				{component?.field_slide.map((slide) => (
-					<div key={slide.id}></div>
+					console.log(slide,"slide")
+					// <Slide key={slide.id} slide={slide}/>
 				))}
 			</div>
 		</section>
