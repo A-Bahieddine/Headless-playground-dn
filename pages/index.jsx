@@ -5,7 +5,8 @@ import { getCurrentLocaleStore, globalDrupalStateStores } from '../lib/stores';
 import { PARAMS_PAGE, FRONT_PATH } from '../lib/constants';
 import Layout from '../components/layout';
 import RenderComponents from '../components/render-components/render-components';
-export default function PageTemplate({ page, mainMenu,footerMenu, hrefLang, preview }) {
+export default function PageTemplate({ page, mainMenu,footerMenu,footerContent, hrefLang, preview }) {
+	
 	const components = page.field_components;
 	function buildMenuHierarchy(menuItems) {
 		// This function converts the flat list into a tree structure based on the 'parent' attribute.
@@ -102,7 +103,13 @@ export async function getServerSideProps(context) {
 		res: context.res,
 		anon: true,
 	});
-
+	const footerContent = await store.getObject({
+		objectName: 'block_content--footer',
+		refresh: true,
+		res: context.res,
+		anon: true,
+	});
+	console.log(footerContent,'s')
 	const origin = process.env.NEXT_PUBLIC_FRONTEND_URL;
 	// Load all the paths for the current page content type.
 	const paths = locales.map(async (locale) => {
@@ -136,6 +143,7 @@ export async function getServerSideProps(context) {
 			page,
 			mainMenu,
 			footerMenu,
+			footerContent,
 			hrefLang,
 			preview: Boolean(context.preview),
 		},
