@@ -1,6 +1,6 @@
-import { Footer, Header, PreviewRibbon } from '@pantheon-systems/nextjs-kit';
+import { Footer, PreviewRibbon } from '@pantheon-systems/nextjs-kit';
 import styles from './layout.module.css';
-
+import Header from './layout/header/header';
 export default function Layout({ children, footerMenu, preview = false }) {
 	const navItems = [
 		{ linkText: '🏠 Home', href: '/' },
@@ -17,7 +17,8 @@ export default function Layout({ children, footerMenu, preview = false }) {
 	return (
 		<div className={`${styles.layout} flex flex-col`}>
 			{preview && <PreviewRibbon />}
-			<Header navItems={navItems} />
+			{/* <Header navItems={navItems} /> */}
+			<Header />
 			<main className="mb-auto">{children}</main>
 			<Footer footerMenuItems={footerMenuItems}>
 				<span className="my-0 mx-auto">

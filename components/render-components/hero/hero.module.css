@@ -33,38 +33,26 @@
 	margin-bottom: 0;
 }
 
-.hero_section {
+.heroSection {
 	background: #000;
 	padding: 141px 0;
 }
 
-.hero_section h3 {
+.heroSection h3 {
 	color: #fff;
 	max-width: 540px;
 }
 
-.hero_section h3 span:first-of-type {
+.heroSection h3 span:first-of-type {
 	font-size: 35px;
 }
 
-span.yellow_span {
-	color: #ffd500;
-}
-
-span.pink_span {
-	color: #ff00b8;
-}
-
-span.white_span {
-	color: #fff;
-}
-
 @media (max-width: 768px) {
-	.hero_section {
+	.heroSection {
 		padding: 44px 0 111px;
 	}
 
-	.hero_section h3 {
+	.heroSection h3 {
 		max-width: 307px;
 	}
 }

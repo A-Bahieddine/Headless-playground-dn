@@ -1,33 +1,33 @@
 body {
-    font-family: "Jost", sans-serif;
+	font-family: 'Jost', sans-serif;
 }
 
 h1 {
-    font-size: 48px;
+	font-size: 48px;
 
-    @media (max-width: 768px) {
-        font-size: 32px;
-    }
+	@media (max-width: 768px) {
+		font-size: 32px;
+	}
 }
 
 h2 {
-    font-size: 32px;
+	font-size: 32px;
 }
 
 h3 {
-    font-size: 28px;
+	font-size: 28px;
 }
 
 h4 {
-    font-size: 22px;
+	font-size: 22px;
 }
 
 h5 {
-    font-size: 20px;
+	font-size: 20px;
 }
 
 h6 {
-    font-size: 16px;
+	font-size: 16px;
 }
 
 h1,
@@ -36,24 +36,36 @@ h3,
 h4,
 h5,
 h6 {
-    line-height: 110%;
+	line-height: 110%;
 }
 
 p {
-    font-size: 16px;
+	font-size: 16px;
 }
 
 .bold {
-    font-weight: bold;
+	font-weight: bold;
 }
 
 .medium-1 {
-    font-weight: 600;
+	font-weight: 600;
 }
 
 .medium {
-    font-weight: 500;
+	font-weight: 500;
 }
 .relative {
-    position: relative;
+	position: relative;
+}
+
+.hero .yellow {
+	color: #ffd500;
+}
+
+.hero .pink {
+	color: #ff00b8;
+}
+
+.hero .white {
+	color: #fff;
 }
