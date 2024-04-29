@@ -1,0 +1,139 @@
+.isi_section {
+    padding: 60px 0;
+    background-color: #fff;
+    padding: 7px 0 4px;
+    transition: height 2000ms ease;
+    z-index: 10;
+    font-size: 20px;
+    line-height: 24px;
+    position: relative;
+    padding: 60px 0;
+}
+
+.isi_section.shortened {
+    line-height: 1.2;
+    position: fixed;
+    top: auto;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    max-height: 180px;
+    transition: max-height 2000ms ease;
+    z-index: 9;
+    padding-top: 0;
+}
+
+.isi_section.shortened .isi_heading {
+    background-color: #F2F2F2;
+}
+
+.isi-content .container {
+    position: relative;
+}
+
+.isi_section.shortened.full {
+    max-height: calc(100% - 150px);
+    top: auto;
+    overflow-y: auto;
+    z-index: 99999;
+}
+
+.icon_moon_container {
+    position: absolute;
+    right: 0px;
+    top: -2.6rem;
+    cursor: pointer;
+}
+
+.isi_section h3,
+.isi_section h4,
+.isi_section ul p {
+    color: #006BB1;
+    margin-bottom: 16px;
+}
+
+.isi_section h3 {
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 140%;
+}
+
+.isi_section h4 {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 140%;
+}
+
+.isi_section ul p {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 140%;
+}
+
+.isi_section p {
+    color: #4D4D57;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 140%;
+}
+
+.isi_section ul {
+    padding-left: 0;
+}
+
+.isi_section ul li {
+    color: #4D4D57;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 140%;
+    margin-bottom: 10px;
+    margin-left: 1.5rem;
+}
+
+.isi_section p a {
+    color: #006BB1;
+}
+
+.isi_section p a {
+    font-weight: 700;
+}
+
+.first_paragraph {
+    color: #4D4D57 !important;
+}
+
+.last_paragraph {
+    font-size: 12px !important;
+}
+
+.fda_link {
+    font-weight: 500 !important;
+}
+
+.isi_section.shortened.full .icon_moon_container {
+    transform: rotate(180deg);
+}
+
+@media (max-width: 991px) {
+    .icon_moon_container {
+        right: 15px;
+        top: -4.2rem;
+    }
+
+    .isi_section h3 {
+        padding-right: 30px;
+    }
+}
+
+@media (max-width: 421px) {
+    .icon_moon_container {
+        top: -6.2rem;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .icon_moon_container {
+        top: -2.8rem;
+    }
+}

@@ -2,12 +2,14 @@ import { PreviewRibbon } from '@pantheon-systems/nextjs-kit';
 import Footer from './layout/footer/footer';
 import styles from './layout.module.css';
 import Header from './layout/header/header';
+import ISI from './layout/ISI/isi';
 
 export default function Layout({
 	children,
 	mainMenu,
 	footerMenu,
 	footerContent,
+	isiContent,
 	preview = false,
 }) {
 	return (
@@ -15,7 +17,8 @@ export default function Layout({
 			{preview && <PreviewRibbon />}
 			<Header />
 			<main className="mb-auto">{children}</main>
-			<Footer footerMenu={footerMenu} footerContent={footerContent} />
+			<ISI isiContent={isiContent}/>
+			<Footer footerMenu={footerMenu} footerContent={footerContent}/>
 		</div>
 	);
 }
