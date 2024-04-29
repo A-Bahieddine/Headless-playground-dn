@@ -3,7 +3,7 @@ import PageListTemplate from '../../pages/pages';
 import PageTemplate from '../../pages/pages/[...alias]';
 
 import umamiEnPagesData from '../data/umamiEnPagesData.json';
-import umamiFooterMenu from '../data/umamiMenuItemsMainData.json';
+import umamimainMenu from '../data/umamiMenuItemsMainData.json';
 
 vi.mock('next/image');
 vi.mock('next/router', () => ({
@@ -18,12 +18,12 @@ vi.mock('next/router', () => ({
 
 describe('<PageListTemplate />', () => {
 	it(`should render pages`, () => {
-		const data = { pages: umamiEnPagesData, footerMenu: umamiFooterMenu };
+		const data = { pages: umamiEnPagesData, mainMenu: umamimainMenu };
 
 		const { asFragment } = render(
 			<PageListTemplate
 				sortedPages={data.pages}
-				footerMenu={data.footerMenu}
+				mainMenu={data.mainMenu}
 			/>,
 		);
 		expect(asFragment()).toMatchSnapshot();
@@ -31,10 +31,10 @@ describe('<PageListTemplate />', () => {
 });
 describe('<PageTemplate />', () => {
 	it(`should render page`, () => {
-		const data = { page: umamiEnPagesData[0], footerMenu: umamiFooterMenu };
+		const data = { page: umamiEnPagesData[0], mainMenu: umamimainMenu };
 
 		const { asFragment } = render(
-			<PageTemplate page={data.page} footerMenu={data.footerMenu} />,
+			<PageTemplate page={data.page} mainMenu={data.mainMenu} />,
 		);
 		expect(asFragment()).toMatchSnapshot();
 	});

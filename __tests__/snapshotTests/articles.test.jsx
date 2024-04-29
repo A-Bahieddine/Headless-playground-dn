@@ -3,9 +3,9 @@ import SSRArticlesListTemplate from '../../pages/articles/index';
 import ArticleTemplate from '../../pages/articles/[...slug]';
 
 import defaultProfileArticlesData from '../data/defaultProfileArticlesData.json';
-import defaultProfileFooterMenu from '../data/defaultProfileMenuItemsMainData.json';
+import defaultProfilemainMenu from '../data/defaultProfileMenuItemsMainData.json';
 import umamiEnArticlesData from '../data/umamiEnArticlesData.json';
-import umamiFooterMenu from '../data/umamiMenuItemsMainData.json';
+import umamimainMenu from '../data/umamiMenuItemsMainData.json';
 
 vi.mock('next/image');
 vi.mock('next/router', () => ({
@@ -20,12 +20,12 @@ vi.mock('next/router', () => ({
 
 describe('<SSRArticlesListTemplate />', () => {
 	it(`should render articles`, () => {
-		const data = { articles: umamiEnArticlesData, footerMenu: umamiFooterMenu };
+		const data = { articles: umamiEnArticlesData, mainMenu: umamimainMenu };
 
 		const { asFragment } = render(
 			<SSRArticlesListTemplate
 				sortedArticles={data.articles}
-				footerMenu={data.footerMenu}
+				mainMenu={data.mainMenu}
 			/>,
 		);
 		expect(asFragment()).toMatchSnapshot();
@@ -35,11 +35,11 @@ describe('<ArticleTemplate />', () => {
 	it(`should render articles`, () => {
 		const data = {
 			article: umamiEnArticlesData[0],
-			footerMenu: umamiFooterMenu,
+			mainMenu: umamimainMenu,
 		};
 
 		const { asFragment } = render(
-			<ArticleTemplate article={data.article} footerMenu={data.footerMenu} />,
+			<ArticleTemplate article={data.article} mainMenu={data.mainMenu} />,
 		);
 		expect(asFragment()).toMatchSnapshot();
 	});
