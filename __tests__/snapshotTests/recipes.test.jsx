@@ -3,7 +3,6 @@ import { render } from '@testing-library/react';
 // import Custom404 from '../../pages/404';
 import RecipeListTemplate from '../../pages/recipes';
 import RecipeTemplate from '../../pages/recipes/[...slug]';
-
 import umamiEnRecipesData from '../data/umamiEnRecipesData.json';
 import umamimainMenu from '../data/umamiMenuItemsMainData.json';
 

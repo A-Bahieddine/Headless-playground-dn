@@ -6,7 +6,6 @@ import Image from 'next/image';
 import { IMAGE_URL } from '../../../lib/constants';
 
 export const Footer = ({ footerMenu, footerContent }) => {
-	console.log(footerMenu, 'footerMenu');
 	return (
 		<footer className={`${styles.wyost_footer}`}>
 			<Container>
@@ -24,7 +23,7 @@ export const Footer = ({ footerMenu, footerContent }) => {
 					</Col>
 					<Col lg={4} md={6} sm={6}>
 						<div className={`${styles.links}`}>
-							{footerMenu.map((item) => (
+							{footerMenu?.map((item) => (
 								<a key={item.id} href={item.url}>
 									{item.title}
 								</a>
