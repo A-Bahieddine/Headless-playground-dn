@@ -1,7 +1,7 @@
 import { render } from '@testing-library/react';
 import ExamplesPageTemplate from '../../pages/examples/index';
 
-import umamiFooterMenu from '../data/umamiMenuItemsMainData.json';
+import umamimainMenu from '../data/umamiMenuItemsMainData.json';
 
 vi.mock('next/image');
 vi.mock('next/router', () => ({
@@ -16,10 +16,10 @@ vi.mock('next/router', () => ({
 
 describe(`Umami <ExamplesPageTemplate />`, () => {
 	it(`should render`, () => {
-		const data = { footerMenu: umamiFooterMenu };
+		const data = { mainMenu: umamimainMenu };
 
 		const { asFragment } = render(
-			<ExamplesPageTemplate footerMenu={data.footerMenu} />,
+			<ExamplesPageTemplate mainMenu={data.mainMenu} />,
 		);
 		expect(asFragment()).toMatchSnapshot();
 	});

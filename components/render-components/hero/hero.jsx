@@ -7,11 +7,14 @@ export const Hero = ({ component }) => {
 		<section className={`${styles.hero_section}`}>
 			<Container>
 				<Row>
-					<div
+					{/* <div
 						dangerouslySetInnerHTML={{
 							__html: component.field_hero_text.processed,
 						}}>
-					</div>
+					</div> */}
+					<h3>
+						<span className={`${styles.yellow}`}>WYOST<sup>®</sup></span>: The <span className={`${styles.yellow}`}>FIRST</span> <span className={`${styles.pink}`}>[</span>and <span className={`${styles.yellow}`}>ONLY</span><span className={`${styles.pink}`}>]</span><span className={`${styles.yellow}`}> </span><span className={`${styles.white}`}>bone-targeting biosimilar </span><span className={`${styles.yellow}`}>interchangeable </span><span className={`${styles.white}`}>with Xgeva<sup>®</sup> (denosumab)</span>
+					</h3>
 				</Row>
 			</Container>
 		</section>

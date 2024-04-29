@@ -2,18 +2,18 @@ import { render } from '@testing-library/react';
 import AuthApiExampleTemplate from '../../pages/examples/auth-api';
 
 import defaultProfileArticlesData from '../data/defaultProfileArticlesData.json';
-import umamiFooterMenu from '../data/umamiMenuItemsMainData.json';
+import umamimainMenu from '../data/umamiMenuItemsMainData.json';
 
 /**
  * @vitest-environment jsdom
  */
 
 describe('<AuthApiExampleTemplate />', () => {
-	const footerMenu = umamiFooterMenu;
+	const mainMenu = umamimainMenu;
 	it('should render a success message if authenticated', () => {
 		const { asFragment } = render(
 			<AuthApiExampleTemplate
-				footerMenu={footerMenu}
+				mainMenu={mainMenu}
 				// using default articles for both profiles as the content
 				// does not matter here.
 				articles={defaultProfileArticlesData}
@@ -23,7 +23,7 @@ describe('<AuthApiExampleTemplate />', () => {
 	});
 	it('should render a failure message if unauthenticated', () => {
 		const { asFragment } = render(
-			<AuthApiExampleTemplate footerMenu={footerMenu} articles={[]} />,
+			<AuthApiExampleTemplate mainMenu={mainMenu} articles={[]} />,
 		);
 		expect(asFragment()).toMatchSnapshot();
 	});

@@ -2,7 +2,7 @@ import { render } from '@testing-library/react';
 import PaginationExampleTemplate from '../../pages/examples/pagination/[[...page]]';
 
 import examplePaginationData from '../data/examplePaginationData.json';
-import umamiFooterMenu from '../data/umamiMenuItemsMainData.json';
+import umamimainMenu from '../data/umamiMenuItemsMainData.json';
 
 vi.mock('next/router', () => ({
 	useRouter: () => ({
@@ -19,11 +19,11 @@ vi.mock('next/router', () => ({
  */
 
 describe('<PaginationExampleTemplate />', () => {
-	const footerMenu = umamiFooterMenu;
+	const mainMenu = umamimainMenu;
 	it('should render the Pagination Example page', () => {
 		const { asFragment } = render(
 			<PaginationExampleTemplate
-				footerMenu={footerMenu}
+				mainMenu={mainMenu}
 				data={examplePaginationData}
 			/>,
 		);

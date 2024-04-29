@@ -2,7 +2,7 @@ import { render } from '@testing-library/react';
 import HomepageTemplate from '../../pages/index';
 
 import umamiEnArticlesData from '../data/umamiEnArticlesData.json';
-import umamiFooterMenu from '../data/umamiMenuItemsMainData.json';
+import umamimainMenu from '../data/umamiMenuItemsMainData.json';
 
 vi.mock('next/image');
 
@@ -12,12 +12,12 @@ vi.mock('next/image');
 
 describe('<HomepageTemplate />', () => {
 	it(`should render articles`, () => {
-		const data = { articles: umamiEnArticlesData, footerMenu: umamiFooterMenu };
+		const data = { articles: umamiEnArticlesData, mainMenu: umamimainMenu };
 
 		const { asFragment } = render(
 			<HomepageTemplate
 				sortedArticles={data.articles}
-				footerMenu={data.footerMenu}
+				mainMenu={data.mainMenu}
 			/>,
 		);
 		expect(asFragment()).toMatchSnapshot();
