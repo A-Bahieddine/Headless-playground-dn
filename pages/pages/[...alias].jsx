@@ -8,6 +8,7 @@ export default function PageTemplate({
 	mainMenu,
 	footerMenu,
 	footerContent,
+	isiContent,
 	hrefLang,
 	preview,
 }) {
@@ -44,6 +45,7 @@ export default function PageTemplate({
 			mainMenu={mainMenu}
 			footerContent={footerContent}
 			footerMenu={footerMenu}
+			isiContent={isiContent}
 		>
 			<NextSeo
 				title="Decoupled Next Drupal Demo"

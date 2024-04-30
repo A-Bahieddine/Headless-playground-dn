@@ -55,6 +55,14 @@ export async function getPagesApi({ context, alias }) {
 		anon: true,
 		params: 'include=field_footer_logo.field_media_image',
 	});
+
+	const isiContent = await store.getObject({
+		objectName: 'block_content--basic',
+		refresh: true,
+		res: context.res,
+		anon: true,
+		params: 'include=field_isi_icon.field_media_image',
+	});
 	// Load all the paths for the current page content type.
 	const paths = locales.map(async (locale) => {
 		const storeByLocales = getCurrentLocaleStore(
@@ -85,6 +93,7 @@ export async function getPagesApi({ context, alias }) {
 		mainMenu,
 		footerMenu,
 		footerContent,
+		isiContent,
 		hrefLang,
 	};
 }
