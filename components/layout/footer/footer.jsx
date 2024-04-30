@@ -6,7 +6,7 @@ import Image from 'next/image';
 import { IMAGE_URL } from '../../../lib/constants';
 
 export const Footer = ({ footerMenu, footerContent }) => {
-	const content = footerContent[0];
+	const content = footerContent ? footerContent[0] : '';
 	return (
 		<footer className={`${styles.footer}`}>
 			<Container>
