@@ -14,25 +14,6 @@ export default function PageTemplate({
 	preview,
 }) {
 	const components = page.field_components;
-	function buildMenuHierarchy(menuItems) {
-		let menuTree = [];
-		let menuMap = {};
-		menuItems?.forEach((item) => {
-			menuMap[item.id] = { ...item, children: [] };
-		});
-		menuItems?.forEach((item) => {
-			if (item.parent) {
-				if (menuMap[item.parent]) {
-					menuMap[item.parent].children.push(menuMap[item.id]);
-				}
-			} else {
-				menuTree.push(menuMap[item.id]);
-			}
-		});
-
-		return menuTree;
-	}
-	buildMenuHierarchy(mainMenu);
 	return (
 		<Layout
 			preview={preview}
@@ -55,7 +36,6 @@ export async function getServerSideProps(context) {
 	const alias = FRONT_PATH;
 	const previewParams =
 		context.preview && (await getPreview(context, 'node--page', params));
-
 	if (previewParams?.error) {
 		return {
 			redirect: {
@@ -64,7 +44,6 @@ export async function getServerSideProps(context) {
 			},
 		};
 	}
-
 	const props = await getPagesApi({ context, alias });
 	return {
 		props: {

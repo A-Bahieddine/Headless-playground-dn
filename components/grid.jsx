@@ -14,7 +14,8 @@ export const ArticleGridItem = ({
 	multiLanguage,
 	locale,
 }) => {
-	const imgSrc = article?.field_media_image[0]?.field_media_image?.uri?.url || '';
+	const imgSrc =
+		article?.field_media_image[0]?.field_media_image?.uri?.url || '';
 	return (
 		<Link
 			passHref

@@ -1,8 +1,27 @@
 import styles from './header.module.css';
 import { Container } from 'react-bootstrap';
 import Image from 'next/image';
-export const Header = () => {
+export const Header = ({ mainMenu }) => {
 	const Logo = '/wyost-logo.svg';
+	function buildMenuHierarchy(menuItems) {
+		let menuTree = [];
+		let menuMap = {};
+		menuItems?.forEach((item) => {
+			menuMap[item.id] = { ...item, children: [] };
+		});
+		menuItems?.forEach((item) => {
+			if (item.parent) {
+				if (menuMap[item.parent]) {
+					menuMap[item.parent].children.push(menuMap[item.id]);
+				}
+			} else {
+				menuTree.push(menuMap[item.id]);
+			}
+		});
+
+		return menuTree;
+	}
+	buildMenuHierarchy(mainMenu);
 	return (
 		<header className={styles.header}>
 			<nav className="d-none d-lg-block">

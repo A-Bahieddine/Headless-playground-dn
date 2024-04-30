@@ -15,7 +15,7 @@ export default function Layout({
 	return (
 		<div className={`${styles.layout} flex flex-col`}>
 			{preview && <PreviewRibbon />}
-			<Header />
+			<Header mainMenu={mainMenu} />
 			<main className="mb-auto">{children}</main>
 			<ISI isiContent={isiContent}/>
 			<Footer footerMenu={footerMenu} footerContent={footerContent}/>

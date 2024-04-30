@@ -13,32 +13,6 @@ export default function PageTemplate({
 	preview,
 }) {
 	const components = page.field_components;
-	function buildMenuHierarchy(menuItems) {
-		// This function converts the flat list into a tree structure based on the 'parent' attribute.
-		let menuTree = [];
-		let menuMap = {};
-
-		// First, transform the list into a map for easy lookup.
-		menuItems.forEach((item) => {
-			menuMap[item.id] = { ...item, children: [] };
-		});
-
-		// Then, build the tree by adding children to their respective parents.
-		menuItems.forEach((item) => {
-			if (item.parent) {
-				// The parent ID is not empty, add this item to its parent's 'children' array.
-				if (menuMap[item.parent]) {
-					menuMap[item.parent].children.push(menuMap[item.id]);
-				}
-			} else {
-				// This is a root item (no parent).
-				menuTree.push(menuMap[item.id]);
-			}
-		});
-
-		return menuTree;
-	}
-	buildMenuHierarchy(mainMenu);
 	return (
 		<Layout
 			preview={preview}
