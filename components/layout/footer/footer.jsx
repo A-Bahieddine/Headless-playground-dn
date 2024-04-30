@@ -6,7 +6,6 @@ import Image from 'next/image';
 import { IMAGE_URL } from '../../../lib/constants';
 
 export const Footer = ({ footerMenu, footerContent }) => {
-	console.log(footerMenu, 'footerMenu');
 	return (
 		<footer className={`${styles.wyost_footer}`}>
 			<Container>

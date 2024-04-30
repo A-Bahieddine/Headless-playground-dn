@@ -6,8 +6,7 @@ import Image from 'next/image';
 import { IMAGE_URL } from '../../../lib/constants';
 const ISI_TRAY_HEIGHT_PX = 158;
 export const ISI = ({ isiContent }) => {
-    console.log(isiContent, "ISI");
-    const [count, setCount] = useState(0);
+    
     useEffect(() => {
         const handleScroll = () => {
             const isiAnchor = document.querySelector('.isi_anchor');

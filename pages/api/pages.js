@@ -42,6 +42,14 @@ export async function getPagesApi({ context, alias }) {
 		res: context.res,
 		anon: true,
 	});
+	const topMenu = await store.getObject({
+		objectName: 'block_content--top_menu',
+		refresh: true,
+		res: context.res,
+		anon: true,
+		params: 'include=field_top_menu_logo.field_media_image',
+	});
+	
 	const footerMenu = await store.getObject({
 		objectName: 'menu_items--footer',
 		refresh: true,
@@ -91,6 +99,7 @@ export async function getPagesApi({ context, alias }) {
 	return {
 		page,
 		mainMenu,
+		topMenu,
 		footerMenu,
 		footerContent,
 		isiContent,

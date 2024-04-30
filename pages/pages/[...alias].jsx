@@ -6,6 +6,7 @@ import { getPagesApi } from '../api/pages';
 export default function PageTemplate({
 	page,
 	mainMenu,
+	topMenu,
 	footerMenu,
 	footerContent,
 	isiContent,
@@ -17,6 +18,7 @@ export default function PageTemplate({
 		<Layout
 			preview={preview}
 			mainMenu={mainMenu}
+			topMenu={topMenu}
 			footerContent={footerContent}
 			footerMenu={footerMenu}
 			isiContent={isiContent}

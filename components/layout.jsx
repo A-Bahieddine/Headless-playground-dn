@@ -7,6 +7,7 @@ import ISI from './layout/ISI/isi';
 export default function Layout({
 	children,
 	mainMenu,
+	topMenu,
 	footerMenu,
 	footerContent,
 	isiContent,
@@ -15,7 +16,7 @@ export default function Layout({
 	return (
 		<div className={`${styles.layout} flex flex-col`}>
 			{preview && <PreviewRibbon />}
-			<Header mainMenu={mainMenu} />
+			<Header mainMenu={mainMenu} topMenu={topMenu}/>
 			<main className="mb-auto">{children}</main>
 			<ISI isiContent={isiContent}/>
 			<Footer footerMenu={footerMenu} footerContent={footerContent}/>
