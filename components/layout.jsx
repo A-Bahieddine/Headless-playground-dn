@@ -15,7 +15,7 @@ export default function Layout({
 			{preview && <PreviewRibbon />}
 			<Header mainMenu={mainMenu} />
 			<main className="mb-auto">{children}</main>
-			{/* <Footer footerMenu={footerMenu} footerContent={footerContent} /> */}
+			<Footer footerMenu={footerMenu} footerContent={footerContent} />
 		</div>
 	);
 }

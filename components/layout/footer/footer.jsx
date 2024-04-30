@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { IMAGE_URL } from '../../../lib/constants';
 
 export const Footer = ({ footerMenu, footerContent }) => {
+	const content = footerContent[0];
 	return (
 		<footer className={`${styles.footer}`}>
 			<Container>
@@ -14,11 +15,14 @@ export const Footer = ({ footerMenu, footerContent }) => {
 						<Image
 							src={
 								IMAGE_URL +
-								footerContent[0]?.field_footer_logo?.field_media_image?.uri.url
+								content?.field_footer_logo?.field_media_image?.uri.url
 							}
 							width="91"
 							height="12"
-							alt=""
+							alt={
+								content?.field_footer_logo?.field_media_image?.resourceIdObjMeta
+									.alt
+							}
 						/>
 					</Col>
 					<Col lg={4} md={6} sm={6}>
@@ -35,9 +39,8 @@ export const Footer = ({ footerMenu, footerContent }) => {
 					<Col lg={2} md={4} sm={4}>
 						<div
 							className={`${styles.copyright}`}
-							return
 							dangerouslySetInnerHTML={{
-								__html: footerContent[0]?.field_copy_right?.processed,
+								__html: content?.field_copy_right?.processed,
 							}}
 						></div>
 					</Col>
@@ -45,7 +48,7 @@ export const Footer = ({ footerMenu, footerContent }) => {
 						<div
 							className={`${styles.rightText}`}
 							dangerouslySetInnerHTML={{
-								__html: footerContent[0]?.body?.processed,
+								__html: content?.body?.processed,
 							}}
 						></div>
 					</Col>
