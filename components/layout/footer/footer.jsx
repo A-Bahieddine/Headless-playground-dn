@@ -35,7 +35,6 @@ export const Footer = ({ footerMenu, footerContent }) => {
 					<Col lg={2} md={4} sm={4}>
 						<div
 							className={`${styles.footer_copyright}`}
-							return
 							dangerouslySetInnerHTML={{
 								__html: footerContent[0]?.field_copy_right.processed,
 							}}
@@ -44,7 +43,6 @@ export const Footer = ({ footerMenu, footerContent }) => {
 					<Col lg={4} md={4} sm={4}>
 						<div
 							className={`${styles.right_text}`}
-							return
 							dangerouslySetInnerHTML={{
 								__html: footerContent[0]?.body.processed,
 							}}
