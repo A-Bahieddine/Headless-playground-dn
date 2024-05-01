@@ -25,7 +25,6 @@ export const Header = ({ mainMenu, topMenu }) => {
 	}
 	buildMenuHierarchy(mainMenu);
 	const menuItems = buildMenuHierarchy(mainMenu);
-	console.log(menuItems, "seessssssssssssssss")
 	return (
 		<header className={styles.header}>
 			<nav className="d-none d-lg-block">

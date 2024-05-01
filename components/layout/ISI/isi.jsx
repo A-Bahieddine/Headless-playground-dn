@@ -6,7 +6,7 @@ import Image from 'next/image';
 import { IMAGE_URL } from '../../../lib/constants';
 const ISI_TRAY_HEIGHT_PX = 158;
 export const ISI = ({ isiContent }) => {
-    
+    const [count, setCount] = useState(false);
     useEffect(() => {
         const handleScroll = () => {
             const isiAnchor = document.querySelector('.isi_anchor');
@@ -18,12 +18,14 @@ export const ISI = ({ isiContent }) => {
             const scrollDiff = window.innerHeight - isiAnchor.getBoundingClientRect().top;
 
             if (scrollDiff < ISI_TRAY_HEIGHT_PX) {
-                isiSection.classList.add('shortened');
+                setcount(ture);
+                // isiSection.classList.add('shortened');
                 if (!isiSection.classList.contains('full')) {
                     iconPlus.style.display = 'block';
                 }
             } else {
-                isiSection.classList.remove('shortened');
+                setcount(false);
+                // isiSection.classList.remove('shortened');
                 if (!isiSection.classList.contains('full')) {
                     iconPlus.style.display = 'none';
                 }
@@ -62,7 +64,7 @@ export const ISI = ({ isiContent }) => {
         // };
     }, []);
     return (
-        <section className="isi_anchor">
+        <section className={`isi_anchor  ${count && "shoutened"}`}>
             <div className={`${styles.isi_section}`}>
                 <div className={`${styles.isi_heading}`}>
                     <Container>
@@ -77,7 +79,7 @@ export const ISI = ({ isiContent }) => {
                                 __html: isiContent[0]?.body.processed,
                             }}>
                         </div>
-                        <div className={`${styles.icon_moon_container}`} onClick={() => handleClick()} id="isi-trigger">
+                        <div className={`${styles.icon_moon_container}`} onClick={() => handleScroll()} id="isi-trigger">
                             <span className="icon_plus">
                                 <Image
                                     src={
