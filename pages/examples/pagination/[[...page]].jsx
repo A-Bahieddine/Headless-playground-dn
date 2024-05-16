@@ -35,7 +35,7 @@ export default function PaginationExampleTemplate({ data, mainMenu }) {
 	};
 
 	return (
-		<Layout mainMenu={mainMenu}>
+		<div>
 			<Head>
 				<title>Pagination example</title>
 				<meta name="description" content="Powered by Pantheon Decoupled Kit" />
@@ -72,7 +72,7 @@ export default function PaginationExampleTemplate({ data, mainMenu }) {
 					)}
 				</section>
 			</div>
-		</Layout>
+		</div>
 	);
 }
 
