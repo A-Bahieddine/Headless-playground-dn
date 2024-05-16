@@ -1,5 +1,5 @@
 import { Container, Row, Col } from 'react-bootstrap';
-import styles from './biosimilar-card.module.css';
+import styles from './Biosimilar-card.module.css';
 import Image from 'next/image';
 import { IMAGE_URL } from '../../../lib/constants';
 export const BiosiliarCard = ({ component }) => {
