@@ -6,8 +6,9 @@ import Image from 'next/image';
 import { IMAGE_URL } from '../../../lib/constants';
 
 export const Footer = ({ footerMenu, footerContent }) => {
+	const content = footerContent ? footerContent[0] : '';
 	return (
-		<footer className={styles["wyost-footer"]}>
+		<footer className={`${styles.footer}`}>
 			<Container>
 				<Row className={styles.top}>
 					<Col lg={2} xs={4} >
@@ -15,17 +16,20 @@ export const Footer = ({ footerMenu, footerContent }) => {
 						<Image
 							src={
 								IMAGE_URL +
-								footerContent[0]?.field_footer_logo.field_media_image.uri.url
+								content?.field_footer_logo?.field_media_image?.uri.url
 							}
 							width="91"
 							height="12"
-							alt="Footer Logo"
+							alt={
+								content?.field_footer_logo?.field_media_image?.resourceIdObjMeta
+									.alt
+							}
 						/>
 						</a>
 					</Col>
-					<Col lg={3} xs={6}>
-						<div className={styles.links}>
-							{footerMenu.map((item) => (
+					<Col lg={4} md={6} sm={6}>
+						<div className={`${styles.links}`}>
+							{footerMenu?.map((item) => (
 								<a key={item.id} href={item.url}>
 									{item.title}
 								</a>
@@ -36,17 +40,17 @@ export const Footer = ({ footerMenu, footerContent }) => {
 				<Row className={styles.bottom}>
 					<Col lg={2} xs={6}>
 						<div
-							className={styles["footer-copyright"]}
+							className={`${styles.copyright}`}
 							dangerouslySetInnerHTML={{
-								__html: footerContent[0]?.field_copy_right.processed,
+								__html: content?.field_copy_right?.processed,
 							}}
 						></div>
 					</Col>
 					<Col lg={4} xs={6}>
 						<div
-							className={styles["right-text"]}
+							className={`${styles.rightText}`}
 							dangerouslySetInnerHTML={{
-								__html: footerContent[0]?.body.processed,
+								__html: content?.body?.processed,
 							}}
 						></div>
 					</Col>
