@@ -19,7 +19,7 @@ export const Card = ({ gridCard }) => {
 			></p>
 			<div className={styles['link-wrapper']}>
 				{gridCard.field_card_link.map((link) => (
-					<a key={link.id} href={link.uri.replace('internal:', '')}>
+					<a key={`card-${link.id}`} href={link.uri.replace('internal:', '')}>
 						{link.title}
 					</a>
 				))}
