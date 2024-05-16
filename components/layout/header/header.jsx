@@ -39,13 +39,11 @@ export const Header = ({ mainMenu, topMenu }) => {
 								target="_blank"
 								rel="noopener noreferrer"
 							>
-								<Image
+								<img
 									src={
 										IMAGE_URL +
 										topMenu[0]?.field_top_menu_logo.field_media_image.uri.url
 									}
-									width={166}
-									height={58}
 									alt="Sandoz Logo"
 								/>
 							</a>

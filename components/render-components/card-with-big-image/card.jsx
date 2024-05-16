@@ -16,7 +16,7 @@ export const LeftCard = ({ RightImageCard }) => {
                     alt="Card Image"
                 />
             </div>
-            <div className={styles["text"]}>
+            <div className={styles["text"] + " text"}>
                 <h4 className={`medium-1`}>
                     {RightImageCard.field_right_big_image_card_title}
                 </h4>

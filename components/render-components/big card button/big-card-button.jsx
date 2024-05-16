@@ -10,9 +10,9 @@ export const BigCardButton = ({ component }) => {
                 <div className={styles["text"]}>
                     <h4 className="medium-1">{component.field_big_card_title}</h4>
                     <div dangerouslySetInnerHTML={{ __html: component.field_big_card_description.processed }}></div>
-                    <div className={styles["text-link-wrapper"]}>
+                    <div className={styles["text-link-wrapper"] + " text-link-wrapper"}>
                         <h5 className={`${styles["left-text"]} medium-1`}>{component.field_big_card_subtitle}</h5>
-                        <a href={`${component.field_big_card_link.uri}`}>{component.field_big_card_link.title}</a>
+                        <a href={`${component.field_big_card_link.uri.replace("internal:", "")}`}>{component.field_big_card_link.title}</a>
                     </div>
                 </div>
 

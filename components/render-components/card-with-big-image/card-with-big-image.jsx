@@ -14,7 +14,7 @@ export const RightImageCard = ({ component }) => {
                 </h3>
                 <p className={styles["left-subtitle"]}>{component.field_right_image_card_subtitle}</p>
             </div>
-            <Row className={styles["switch-info"]}>
+            <Row className={styles["switch-info"] + " switch-info"}>
                 <Col lg={8} xs={12}>
                     {component.field_right_image_card.map((card) => (
                         <LeftCard key={card.id} RightImageCard={card} />

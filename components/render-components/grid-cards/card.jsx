@@ -4,7 +4,7 @@ import styles from './grid-card.module.css';
 export const Card = ({ gridCard }) => {
 	const imgSrc = gridCard?.field_card_image?.field_media_image?.uri?.url || '';
 	return (
-		<div className={styles['card-with-image']}>
+		<div className={styles['card-with-image'] + " card-with-image"}>
 			<Image
 				src={IMAGE_URL + imgSrc}
 				width="526"
@@ -17,7 +17,7 @@ export const Card = ({ gridCard }) => {
 					__html: gridCard.field_card_description.value,
 				}}
 			></p>
-			<div className={styles['link-wrapper']}>
+			<div className={styles['link-wrapper'] + " link-wrapper"}>
 				{gridCard.field_card_link.map((link) => (
 					<a key={`card-${link.id}`} href={link.uri.replace('internal:', '')}>
 						{link.title}

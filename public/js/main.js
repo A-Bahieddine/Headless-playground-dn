@@ -128,7 +128,7 @@ document.getElementById('scrollToTop').addEventListener('click', function (event
 });
 
 // Scroll cards
-const cardLinks = document.querySelectorAll('.home .card-with-image .link-wrapper a , .home .big-card .list ul a, .home .switch-info .text p a, .home .talking-wyost .text-link-wrapper a');
+const cardLinks = document.querySelectorAll('.card-with-image .link-wrapper a , .big-card .list p a, .switch-info .text p a, .talking-wyost .text-link-wrapper a');
 cardLinks.forEach(link => {
   link.addEventListener('click', (event) => {
     event.preventDefault(); // Prevent default anchor behavior
