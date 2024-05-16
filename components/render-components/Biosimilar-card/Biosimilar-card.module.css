@@ -1,0 +1,75 @@
+.outstanding-biosimilar-card {
+    padding: 48px 56px 44px 50px;
+    border-radius: 20px;
+    border: 2px solid #006BB1;
+    background: #FEF8E6;
+}
+
+.outstanding-biosimilar-card .card-title {
+    letter-spacing: -0.2px;
+    color: #0460A9;
+    margin-bottom: 30px;
+}
+
+.outstanding-biosimilar-card .card-subtitle {
+    font-size: 16px;
+    line-height: 130%;
+    color: #414042;
+    max-width: 362px;
+    margin-bottom: 0;
+}
+
+.outstanding-biosimilar-right {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.outstanding-biosimilar-card .outstanding-biosimilar-right:last-of-type {
+    margin-bottom: 0;
+}
+
+.outstanding-biosimilar-right .left,
+.outstanding-biosimilar-right .right {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 130%;
+    color: #414042;
+    min-width: 201px;
+}
+
+.outstanding-biosimilar-right .left span,
+.outstanding-biosimilar-right .right span {
+    font-weight: 400;
+    font-size: 22px;
+}
+
+@media (max-width: 991px) {
+    .outstanding-biosimilar-card {
+        padding: 29px 21px;
+    }
+
+    .outstanding-biosimilar-card .card-title {
+        margin-bottom: 20px;
+    }
+
+    .outstanding-biosimilar-card .card-subtitle {
+        text-align: center;
+        margin-bottom: 28px;
+    }
+
+    .outstanding-biosimilar-right .left,
+    .outstanding-biosimilar-right .right {
+        min-width: 136.8px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1080px) {
+
+    .outstanding-biosimilar-right .left,
+    .outstanding-biosimilar-right .right {
+        min-width: 146px;
+        max-width: 146px;
+    }
+}

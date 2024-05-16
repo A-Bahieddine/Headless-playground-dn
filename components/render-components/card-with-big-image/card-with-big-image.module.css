@@ -1,0 +1,161 @@
+.content {
+    max-width: 72%;
+}
+
+.content p {
+    color: #414042;
+    margin-bottom: 10px;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 110%;
+}
+
+.content p:last-child {
+    margin-bottom: 0;
+}
+
+.talking-wyost .content,
+.one-source .content {
+    padding-top: 30px;
+    max-width: 100%;
+}
+
+@media (max-width: 991px) {
+    .content {
+        max-width: 100%;
+    }
+}
+
+.head-wrapper {
+    margin-bottom: 30px;
+}
+
+.left-title {
+    letter-spacing: -0.2px;
+    color: #0460A9;
+    margin-bottom: 30px;
+}
+
+.head-wrapper p {
+    color: #414042;
+    margin-bottom: 0;
+    font-weight: 600;
+}
+
+.switch-info {
+    position: relative;
+}
+
+.img-text-container {
+    border-radius: 20px;
+    border: 2px solid #FFD500;
+    background: #FFD500;
+    margin-bottom: 30px;
+    padding: 31px 200px 38px 50px;
+    display: flex;
+}
+
+.img-text-container .img {
+    margin-right: 47px;
+    width: 183px;
+}
+
+.switch-info .img-text-container .img img {
+    width: auto;
+}
+
+.img-text-container .text h4 {
+    letter-spacing: -0.2px;
+    margin-bottom: 14px;
+    color: #0460A9;
+}
+
+.img-text-container .text p {
+    color: #414042;
+    margin-bottom: 0;
+    font-size: 16px;
+}
+
+.right-dots {
+    /* position: relative; */
+    height: 100%;
+}
+
+.mobile-content {
+    padding: 30px 0;
+}
+
+.big-image {
+    position: absolute;
+    right: 0rem;
+    top: -40px;
+    height: 126%;
+    z-index: 1;
+    width: 627px;
+}
+
+@media (max-width: 991px) {
+    .switch-info .img-text-container .img img {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .left-title {
+        text-align: left;
+    }
+
+    .img-text-container {
+        padding: 30px 50px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .img-text-container .img {
+        margin-right: 0;
+        margin-bottom: 21px;
+        max-width: none;
+    }
+
+    .img-text-container .text h4,
+    .img-text-container .text p {
+        text-align: center;
+    }
+
+}
+
+@media (max-width: 768px) {
+    .right-dots {
+        margin-left: -15px;
+        margin-right: -30px;
+        height: auto;
+    }
+
+    .switching-xgeva-mobile {
+        border-bottom: 1px solid #006BB1;
+        width: 100%;
+        padding: 0 15px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .switching-xgeva-mobile {
+        margin: auto;
+    }
+}
+
+@media (min-width: 990px) and (max-width: 1200px) {
+    .big-image {
+        right: -11rem;
+        top: -31px;
+        height: 97%;
+        overflow-x: hidden;
+    }
+}
+
+@media (min-width: 1200px) and (max-width: 1400px) {
+    .big-image {
+        right: -6rem;
+        top: -13px;
+        height: 120%;
+    }
+}

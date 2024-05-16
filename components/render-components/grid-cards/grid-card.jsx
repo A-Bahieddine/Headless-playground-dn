@@ -6,17 +6,16 @@ import Col from 'react-bootstrap/Col';
 export const Grid = ({ component }) => {
     const gridNum = 12 / component.field_grid_number;
     return (
-        <section className={`${styles.cards}`}>
-            <Container>
-                <Row>
-                    {component.field_card.map((card) => (
-                        <Col key={card.id} lg={`${gridNum}`} md={6} sm={12}>
-                            <Card gridCard={card} />
-                        </Col>
-                    ))}
-                </Row>
-            </Container>
-        </section >
+        <Container>
+            <h3 className={`${styles["left-title"]} medium-1`}>{component.field_title}</h3>
+            <Row>
+                {component.field_card.map((card) => (
+                    <Col key={card.id} lg={`${gridNum}`} xs={12}>
+                        <Card gridCard={card} />
+                    </Col>
+                ))}
+            </Row>
+        </Container>
     );
 };
 

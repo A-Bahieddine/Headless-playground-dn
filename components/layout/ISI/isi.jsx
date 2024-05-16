@@ -1,86 +1,25 @@
-import styles from './isi.module.css';
 import Container from 'react-bootstrap/Container';
-import { useEffect } from 'react';
-import { useState } from 'react';
 import Image from 'next/image';
 import { IMAGE_URL } from '../../../lib/constants';
-const ISI_TRAY_HEIGHT_PX = 158;
 export const ISI = ({ isiContent }) => {
-    const [count, setCount] = useState(false);
-    useEffect(() => {
-        const handleScroll = () => {
-            const isiAnchor = document.querySelector('.isi_anchor');
-            const isiSection = document.querySelector('.isi_section');
-            const iconPlus = document.querySelector('.icon_plus');
-            // const iconMoonContainer = document.querySelector('.icon_moon_container');
-            if (!isiAnchor || !isiSection || !iconPlus) return;
-
-            const scrollDiff = window.innerHeight - isiAnchor.getBoundingClientRect().top;
-
-            if (scrollDiff < ISI_TRAY_HEIGHT_PX) {
-                setcount(ture);
-                // isiSection.classList.add('shortened');
-                if (!isiSection.classList.contains('full')) {
-                    iconPlus.style.display = 'block';
-                }
-            } else {
-                setcount(false);
-                // isiSection.classList.remove('shortened');
-                if (!isiSection.classList.contains('full')) {
-                    iconPlus.style.display = 'none';
-                }
-            }
-        };
-
-        const handleClick = () => {
-            const isiSection = document.querySelector('.isi_section');
-            const isiAnchor = document.querySelector('.isi_anchor');
-            const iconPlus = document.querySelector('.icon_plus');
-            // const iconMoonContainer = document.querySelector('.icon_moon_container');
-            if (!isiSection || !isiAnchor || !iconPlus) return;
-
-            if (!isiSection.classList.contains('shortened') && !isiSection.classList.contains('full')) {
-                const isiPosition = isiAnchor.offsetTop;
-                window.scrollTo(0, isiPosition);
-                return;
-            }
-
-            isiSection.classList.toggle('full');
-
-            if (isiSection.classList.contains('full')) {
-                iconPlus.style.display = 'block';
-            } else {
-                iconPlus.style.display = 'none';
-            }
-        };
-        handleClick();
-        handleScroll();
-        // window.addEventListener('scroll', handleScroll);
-        // iconMoonContainer.addEventListener('click', handleClick);
-
-        // return () => {
-        //     window.removeEventListener('scroll', handleScroll);
-        //     iconMoonContainer.removeEventListener('click', handleClick);
-        // };
-    }, []);
     return (
-        <section className={`isi_anchor  ${count && "shoutened"}`}>
-            <div className={`${styles.isi_section}`}>
-                <div className={`${styles.isi_heading}`}>
+        <section className="isi-anchor">
+            <div className="isi-section">
+                <div className="isi-heading">
                     <Container>
                         <h3>IMPORTANT SAFETY INFORMATION AND
                             INDICATIONS</h3>
                     </Container>
                 </div>
-                <div className={`${styles.isi_content}`}>
+                <div className="isi-content">
                     <Container>
                         <div
                             dangerouslySetInnerHTML={{
                                 __html: isiContent[0]?.body.processed,
                             }}>
                         </div>
-                        <div className={`${styles.icon_moon_container}`} onClick={() => handleScroll()} id="isi-trigger">
-                            <span className="icon_plus">
+                        <div className="icon-moon-container" id="isi-trigger">
+                            <span className="icon-plus">
                                 <Image
                                     src={
                                         IMAGE_URL +
@@ -88,7 +27,7 @@ export const ISI = ({ isiContent }) => {
                                     }
                                     width="14"
                                     height="12"
-                                    alt=""
+                                    alt="icon-plus"
                                 />
                             </span>
                         </div>

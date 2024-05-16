@@ -1,0 +1,137 @@
+.right-round .blue-bg h1,
+.left-round .blue-bg h1 {
+    letter-spacing: -0.2px;
+    color: #FFD500;
+    margin-bottom: 0;
+    font-weight: 600;
+}
+
+.left-round .left {
+    display: none;
+}
+
+.blue-line {
+    display: flex;
+}
+
+.right-round .blue-bg h4,
+.left-round .blue-bg h4 {
+    line-height: 150%;
+    letter-spacing: -0.2px;
+    color: #fff;
+    margin-top: 24px;
+    margin-bottom: 0;
+    font-weight: 600;
+}
+
+.blue-bg {
+    background-color: #0061AB;
+    margin: 60px 0;
+}
+
+.blue-content {
+    padding: 22px 0;
+}
+
+.blue-bg-left,
+.blue-bg-right {
+    flex: 1;
+    position: relative;
+}
+
+.right-round .blue-bg.blue-bg-right,
+.left-round .blue-bg.blue-bg-left {
+    background: transparent;
+}
+
+.right-round .blue-bg-right::before {
+    content: '';
+    display: block;
+    height: 100%;
+    width: 80px;
+    border-top-right-radius: 100px;
+    border-bottom-right-radius: 100px;
+    background-color: #0061AB;
+}
+
+.right-round .blue-bg-right:after {
+    content: '';
+    display: block;
+    height: 100%;
+    width: 0px;
+    background-color: #0061AB;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.left-round .blue-bg-left::before {
+    content: '';
+    display: block;
+    height: 100%;
+    width: 80px;
+    background-color: #0061AB;
+    margin-left: auto;
+    border-top-left-radius: 100px;
+    border-bottom-left-radius: 100px;
+}
+
+.left-round .blue-bg-left:after {
+    content: '';
+    display: block;
+    height: 100%;
+    width: 0px;
+    background-color: #0061AB;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+
+@media (max-width: 991px) {
+    .blue-bg {
+        margin: 30px 0;
+    }
+
+    .blue-content {
+        padding: 26px 0;
+    }
+
+    .blue-bg-left,
+    .blue-bg-right {
+        display: none;
+    }
+
+    /* .left-round .blue-bg-left,
+    .left-round .blue-bg-right {
+        display: block;
+    } */
+
+    .left-round .blue-bg-left::before {
+        display: none;
+    }
+
+    .right-round .blue-bg {
+        border-radius: 0 100px 100px 0;
+        width: 98%;
+    }
+
+    .left-round .blue-bg {
+        width: 100%;
+        border-radius: 100px 0 0 100px;
+        margin-left: 10px;
+    }
+
+    .right-round .blue-bg h4,
+    .left-round .blue-bg h4 {
+        margin-top: 19px;
+    }
+
+    .left-round .blue-content {
+        padding-left: 30px;
+    }
+
+    .right-round .blue-content {
+        padding-right: 30px;
+    }
+}

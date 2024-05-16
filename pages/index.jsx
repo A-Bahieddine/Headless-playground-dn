@@ -4,6 +4,7 @@ import { FRONT_PATH } from '../lib/constants';
 import Layout from '../components/layout';
 import RenderComponents from '../components/render-components/render-components';
 import { getPagesApi } from './api/pages';
+import Script from 'next/script';
 export default function PageTemplate({
 	page,
 	mainMenu,
@@ -30,6 +31,9 @@ export default function PageTemplate({
 				languageAlternates={hrefLang}
 			/>
 			<RenderComponents components={components} />
+			<Script src="/js/bootstrap.bundle.min.js"></Script>
+			<Script src="/js/lottie js/lottie-animation.js"></Script>
+			<Script src="/js/main.js"></Script>
 		</Layout>
 	);
 }

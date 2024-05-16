@@ -1,0 +1,17 @@
+.left-title {
+    letter-spacing: -0.2px;
+    color: #0460A9;
+    margin-bottom: 30px;
+}
+
+.fda-approve {
+    font-size: 16px;
+    color: #414042;
+    margin-bottom: 30px;
+}
+
+@media (max-width: 991px) {
+    .left-title {
+        text-align: left;
+    }
+}

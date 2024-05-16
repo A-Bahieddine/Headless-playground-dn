@@ -1,33 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
+
+html,
 body {
-	font-family: 'Jost', sans-serif;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: "Jost", sans-serif;
 }
 
 h1 {
-	font-size: 48px;
+    font-size: 48px;
 
-	@media (max-width: 768px) {
-		font-size: 32px;
-	}
+    @media (max-width: 991px) {
+        font-size: 32px;
+    }
 }
 
 h2 {
-	font-size: 32px;
+    font-size: 32px;
 }
 
 h3 {
-	font-size: 28px;
+    font-size: 28px;
 }
 
 h4 {
-	font-size: 22px;
+    font-size: 22px;
 }
 
 h5 {
-	font-size: 20px;
+    font-size: 20px;
 }
 
 h6 {
-	font-size: 16px;
+    font-size: 16px;
 }
 
 h1,
@@ -36,36 +43,365 @@ h3,
 h4,
 h5,
 h6 {
-	line-height: 110%;
+    line-height: 110%;
+    margin-bottom: 0;
 }
 
 p {
-	font-size: 16px;
+    font-size: 16px;
 }
 
 .bold {
-	font-weight: bold;
+    font-weight: bold;
 }
 
 .medium-1 {
-	font-weight: 600;
+    font-weight: 600;
 }
 
 .medium {
-	font-weight: 500;
-}
-.relative {
-	position: relative;
+    font-weight: 500;
 }
 
-.hero .yellow {
-	color: #ffd500;
+sup {
+    top: -.3em !important;
+    left: 0px !important;
 }
 
-.hero .pink {
-	color: #ff00b8;
+#bone,
+#spine,
+#radiation,
+#injection,
+#pills,
+#doctor {
+    max-width: 100px;
+    margin: 0 auto 18px;
 }
 
-.hero .white {
-	color: #fff;
+#rotation svg g g {
+    display: block !important;
 }
+
+.three-cards {
+    background: #FEF8E6;
+    padding-bottom: 60px;
+}
+
+.treatment-wyost {
+    padding-bottom: 30px;
+    overflow: hidden;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.30) 51.1%, rgba(255, 213, 0, 0.30) 100%);
+}
+
+.talking-wyost {
+    padding-bottom: 60px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.30) 51.1%, rgba(152, 189, 213, 0.30) 100%);
+    position: relative;
+    z-index: 0;
+}
+
+.one-source {
+    padding-bottom: 30px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.30) 0%, rgba(255, 213, 0, 0.30) 100%);
+}
+
+.biosimilar-basics {
+    padding-bottom: 46px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.30) 51.1%, rgba(152, 189, 213, 0.30) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.faq {
+    padding-bottom: 1px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.30) 0%, rgba(255, 213, 0, 0.30) 100%);
+}
+
+.helpful-resources {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.30) 51.1%, rgba(152, 189, 213, 0.30) 100%);
+    padding-bottom: 60px;
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* faqs styles */
+
+.accordion-button {
+    border-radius: 20px !important;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 110%;
+    color: #0460A9;
+    padding: 30px 30px 15px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    text-align: left;
+    background-color: #fff;
+    border: 0;
+}
+
+.accordion-button.collapsed {
+    padding-bottom: 30px;
+}
+
+.accordion-button::after {
+    content: "";
+    position: absolute;
+    width: unset;
+    height: unset;
+    background-image: none;
+    right: 30px;
+    border: solid #0460A9;
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 4.5px;
+    transform: rotate(45deg);
+}
+
+.accordion-button::before {
+    content: 'collapse';
+    position: absolute;
+    right: 55px;
+    text-transform: uppercase;
+    top: 57%;
+    transform: translateY(-50%);
+}
+
+.accordion-button:not(.collapsed)::after {
+    background-image: none;
+    transform: rotate(-135deg);
+}
+
+.accordion-button.collapsed::before {
+    content: 'expand';
+    top: 52%;
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: unset;
+    border-radius: unset !important;
+    border-bottom: unset !important;
+    color: #0460A9;
+    box-shadow: unset !important;
+}
+
+.accordion-button:focus {
+    border-color: unset;
+    box-shadow: unset;
+}
+
+.accordion-button:focus:not(:focus-visible) {
+    outline: unset !important;
+}
+
+.talking-wyost .talking-right-dots img {
+    position: absolute;
+    bottom: -220px;
+    right: -80px;
+    height: 60%;
+    z-index: 0;
+}
+
+.talking-wyost .talking-left-dots img {
+    position: absolute;
+    bottom: -25px;
+    z-index: -1;
+}
+
+.biosimilar-basics .biosimilar-right-dots img {
+    position: absolute;
+    right: -24px;
+    height: 40%;
+    bottom: -361.1px;
+}
+
+.biosimilar-basics .biosimilar-left-dots img {
+    position: absolute;
+    left: -40px;
+    bottom: -397px;
+    height: 61%;
+}
+
+.helpful-resources .helpful-resources-left-dots img {
+    position: absolute;
+    left: -51px;
+    bottom: -431px;
+    height: 60%;
+}
+
+@media (max-width: 991px) {
+    .main-menu.show-menu {
+        transform: scaleY(1);
+    }
+
+    .accordion-button::before {
+        font-size: 14px;
+    }
+
+    .accordion-button {
+        padding-right: 140px;
+    }
+
+    .treatment-wyost {
+        padding-bottom: 0;
+    }
+
+    .talking-wyost {
+        padding-bottom: 30px;
+    }
+
+    .biosimilar-basics {
+        padding-bottom: 0;
+    }
+
+    .helpful-resources {
+        padding-bottom: 0px;
+    }
+}
+
+/* ISI Module Start */
+.isi-section {
+    padding: 60px 0;
+    background-color: #fff;
+    padding: 7px 0 4px;
+    transition: height 2000ms ease;
+    z-index: 10;
+    font-size: 20px;
+    line-height: 24px;
+    position: relative;
+    padding: 60px 0;
+}
+
+.isi-section.shortened {
+    line-height: 1.2;
+    position: fixed;
+    top: auto;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    max-height: 180px;
+    transition: max-height 2000ms ease;
+    z-index: 9;
+    padding-top: 0;
+}
+
+.isi-section.shortened .isi-heading {
+    background-color: #F2F2F2;
+}
+
+.isi-content .container {
+    position: relative;
+}
+
+.isi-section.shortened.full {
+    max-height: calc(100% - 150px);
+    top: auto;
+    overflow-y: auto;
+    z-index: 99999;
+}
+
+.icon-moon-container {
+    position: absolute;
+    right: 0px;
+    top: -2.6rem;
+    cursor: pointer;
+}
+
+.isi-section h3,
+.isi-section h4,
+.isi-section ul p {
+    color: #006BB1;
+    margin-bottom: 16px;
+}
+
+.isi-section h3 {
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 140%;
+}
+
+.isi-section h4 {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 140%;
+}
+
+.isi-section ul p {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 140%;
+}
+
+.isi-section p {
+    color: #4D4D57;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 140%;
+}
+
+.isi-section ul {
+    padding-left: 0;
+}
+
+.isi-section ul li {
+    color: #4D4D57;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 140%;
+    margin-bottom: 10px;
+    margin-left: 1.5rem;
+}
+
+.isi-section p a {
+    color: #006BB1;
+}
+
+.isi-section p a {
+    font-weight: 700;
+}
+
+.first-paragraph {
+    color: #4D4D57 !important;
+}
+
+.last-paragraph {
+    font-size: 12px !important;
+}
+
+.fda-link {
+    font-weight: 500 !important;
+}
+
+.isi-section.shortened.full .icon-moon-container {
+    transform: rotate(180deg);
+}
+
+@media (max-width: 991px) {
+    .icon-moon-container {
+        right: 15px;
+        top: -4.2rem;
+    }
+
+    .isi-section h3 {
+        padding-right: 30px;
+    }
+}
+
+@media (max-width: 421px) {
+    .icon-moon-container {
+        top: -6.2rem;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .icon-moon-container {
+        top: -2.8rem;
+    }
+}
+
+/* ISI Module End */

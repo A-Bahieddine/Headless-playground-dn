@@ -7,10 +7,11 @@ import { IMAGE_URL } from '../../../lib/constants';
 
 export const Footer = ({ footerMenu, footerContent }) => {
 	return (
-		<footer className={`${styles.wyost_footer}`}>
+		<footer className={styles["wyost-footer"]}>
 			<Container>
-				<Row className={`${styles.top}`}>
-					<Col lg={2} md={4} sm={4}>
+				<Row className={styles.top}>
+					<Col lg={2} xs={4} >
+						<a href="https://www.sandoz.com/" target="_blank">
 						<Image
 							src={
 								IMAGE_URL +
@@ -18,11 +19,12 @@ export const Footer = ({ footerMenu, footerContent }) => {
 							}
 							width="91"
 							height="12"
-							alt=""
+							alt="Footer Logo"
 						/>
+						</a>
 					</Col>
-					<Col lg={4} md={6} sm={6}>
-						<div className={`${styles.links}`}>
+					<Col lg={3} xs={6}>
+						<div className={styles.links}>
 							{footerMenu.map((item) => (
 								<a key={item.id} href={item.url}>
 									{item.title}
@@ -31,18 +33,18 @@ export const Footer = ({ footerMenu, footerContent }) => {
 						</div>
 					</Col>
 				</Row>
-				<Row className={`${styles.bottom}`}>
-					<Col lg={2} md={4} sm={4}>
+				<Row className={styles.bottom}>
+					<Col lg={2} xs={6}>
 						<div
-							className={`${styles.footer_copyright}`}
+							className={styles["footer-copyright"]}
 							dangerouslySetInnerHTML={{
 								__html: footerContent[0]?.field_copy_right.processed,
 							}}
 						></div>
 					</Col>
-					<Col lg={4} md={4} sm={4}>
+					<Col lg={4} xs={6}>
 						<div
-							className={`${styles.right_text}`}
+							className={styles["right-text"]}
 							dangerouslySetInnerHTML={{
 								__html: footerContent[0]?.body.processed,
 							}}

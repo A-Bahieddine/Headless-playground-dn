@@ -4,41 +4,21 @@ import Image from 'next/image';
 import { IMAGE_URL } from '../../../lib/constants';
 export const Header = ({ mainMenu, topMenu }) => {
 	const Logo = '/wyost-logo.svg';
-	const downArrow = '/icon-caret-down.png';
-	function buildMenuHierarchy(menuItems) {
-		let menuTree = [];
-		let menuMap = {};
-		menuItems?.forEach((item) => {
-			menuMap[item.id] = { ...item, children: [] };
-		});
-		menuItems?.forEach((item) => {
-			if (item.parent) {
-				if (menuMap[item.parent]) {
-					menuMap[item.parent].children.push(menuMap[item.id]);
-				}
-			} else {
-				menuTree.push(menuMap[item.id]);
-			}
-		});
-
-		return menuTree;
-	}
-	buildMenuHierarchy(mainMenu);
-	const menuItems = buildMenuHierarchy(mainMenu);
 	return (
-		<header className={styles.header}>
-			<nav className="d-none d-lg-block">
-				<Container className={styles.container}>
-					<div className={styles.left}>
-						<Image src={Logo} width={180} height={180} alt="image page" />
+		<header className={styles["header"] + " header"}>
+			<nav className={`d-none d-lg-block nav`}>
+				<Container className={styles["container"]}>
+					<div className={styles["navbar-left"]}>
+						<a href="#">
+							<Image src={Logo} width={166} height={58} alt="Logo Image" />
+						</a>
 					</div>
-					<div className={styles.right}>
-						<div className={styles.top}>
+					<div className={styles["navbar-right"]}>
+						<div className={styles["top-header"] + " top-header"}>
 							{topMenu[0].field_top_menu_links.map((item => {
-								return <a key={item.id} href={item.url}>{item.title}</a>;
+								return <a key={item.id} href={item.uri.replace("internal:", "")}>{item.title}</a>;
 							}))}
-
-							<Image
+							{/* <Image
 								src={
 									IMAGE_URL +
 									topMenu[0]?.field_top_menu_logo.field_media_image.uri.url
@@ -46,74 +26,67 @@ export const Header = ({ mainMenu, topMenu }) => {
 								width="91"
 								height="12"
 								alt=""
-							/>
+							/> */}
+							<a href="https://www.sandoz.com/" target="_blank" rel="noopener noreferrer">
+								<img src={
+									IMAGE_URL +
+									topMenu[0]?.field_top_menu_logo.field_media_image.uri.url
+								} alt="Sandoz Logo" />
+							</a>
 						</div>
-						<div className={styles.bottom}>
-							<ul className={styles.mainList}>
-								{menuItems.map((item => {
-									return item.children.length > 0 ? <li key={item.id} className={styles.navItem}>
-										<a href={item.url} dangerouslySetInnerHTML={{ __html: item.title }}></a>
-										<Image src={downArrow} width={14} height={12} alt="image page" />
-										<ul className={styles.hasContent}>
-											{item.children.map((subItem => {
-												return <li key={subItem.id} className={styles.childItem}>
-													<a href={subItem.url} dangerouslySetInnerHTML={{ __html: subItem.title }}></a>
-												</li>
-											}))}
-										</ul>
-									</li> : <li key={item.id} className={styles.navItem}>
+						<div className={styles["bottom-header"]}>
+							<ul className={styles["main-list"]}>
+								{mainMenu.map((item => {
+									return <li key={item.id} className={styles["nav-item"] + " nav-item"}>
 										<a href={item.url} dangerouslySetInnerHTML={{ __html: item.title }}></a>
 									</li>
 								}))}
-								<button>request a rep</button>
+								<a className={styles["button"]}
+									href="https://www.google.com/"
+									target="_blank">Patient
+									e-consent</a>
 							</ul>
 						</div>
 					</div>
 				</Container>
-				<div className={styles.overlay}></div>
+				<div className={styles["overlay"]}></div>
 			</nav>
 			{/* Mobile Menu */}
-			<nav className="d-lg-none d-block">
-				<Container className={styles.container}>
-					<div className={styles.leftNavbar}>
-						<Image src={Logo} width={180} height={180} alt="image page" />
-						<div className={styles.rightLink}>
-							<a href="#">Prescribing Information</a>
-							<div className={styles.hamburgerMenu}>
+			<nav className={`d-lg-none d-block nav`}>
+				<Container className={styles["container"]}>
+					<div className={styles["navbar-left"]}>
+						<a href="#">
+							<Image src={Logo} width={166} height={58} alt="image page" /></a>
+						<div className={styles["right-link"]}>
+							<a
+								href="https://prod.cms.pro.wyost.com/sites/spare99_sandoz_com/files/2024-03/Wyost%20PI%203.2024.pdf"
+								target="_blank">Prescribing Information</a>
+							<div className={styles["hamburger-menu"] + " hamburger-menu"}>
 								<span></span>
 								<span></span>
 								<span></span>
 							</div>
 						</div>
 					</div>
-					<div className={styles.mainMenu}>
+					<div className={styles["main-menu"] + " main-menu"}>
 						<ul>
-							{menuItems.map((item => {
-								return item.children.length > 0 ? <li key={item.id} className={styles.navItem}>
-									<a href={item.url}>
-										{item.title}
-									</a>
-									<ul className={styles.hasChild}>
-										{item.children.map((subItem => {
-											return <li key={subItem.id} className={styles.childItem}>
-												<a href={subItem.url}>{subItem.title}</a>
-											</li>
-										}))}
-									</ul>
-								</li> : <li key={item.id} className={styles.childItem}>
+							<li><a
+								id="scrollToTop" href="#">Home</a></li>
+							{mainMenu.map((item => {
+								return <li key={item.id} className={styles.navItem}>
 									<a href={item.url}>
 										{item.title}
 									</a>
 								</li>
 							}))}
 						</ul>
-						<div className={styles.bottomLinksWrapper}>
-							<button>request a rep</button>
-							<div className={styles.bottomLinks}>
-								{topMenu[0].field_top_menu_links.map((item => {
-									return <a key={item.id} href={item.url}>{item.title}</a>;
-								}))}
-							</div>
+						<a className={styles["button"]} href="https://www.google.com/"
+							target="_blank">Patient
+							e-consent</a>
+						<div className={styles["bottom-links"] + " bottom-links"}>
+							{topMenu[0].field_top_menu_links.map((item => {
+								return <a key={item.id} href={item.uri.replace("internal:", "")}>{item.title}</a>;
+							}))}
 						</div>
 					</div>
 				</Container>

@@ -1,0 +1,21 @@
+.head-wrapper {
+    margin-bottom: 30px;
+}
+
+.left-title {
+    letter-spacing: -0.2px;
+    color: #0460A9;
+    margin-bottom: 30px;
+}
+
+.left-subtitle {
+    color: #414042;
+    margin-bottom: 0;
+    font-weight: 600;
+}
+
+@media (max-width: 991px) {
+    .left-title {
+        text-align: left;
+    }
+}
