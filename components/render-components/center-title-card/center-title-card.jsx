@@ -5,7 +5,6 @@ import Image from 'next/image';
 import { IMAGE_URL } from '../../../lib/constants';
 
 export const CenterCard = ({ component }) => {
-    console.log(IMAGE_URL,"img");
     return (
         <Container>
             <h3 className={`${styles["centered-title"]} medium-1`} dangerouslySetInnerHTML={{ __html: component.field_center_title }}>

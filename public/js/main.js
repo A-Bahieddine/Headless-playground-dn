@@ -17,8 +17,6 @@ if (
   plusIcon.style.display = 'none';
 }
 window.addEventListener('scroll', function () {
-  // console.log( document.getElementById('isi-section').getBoundingClientRect().top);
-  // var scrollTop = document.querySelector(document).scrollTop();
   if (
     (window.innerHeight - isiAnchor.getBoundingClientRect().top < ISI_TRAY_HEIGHT_PX)
   ) {

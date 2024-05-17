@@ -89,6 +89,12 @@
 
 
 @media (max-width: 991px) {
+
+    .left-round .blue-bg-left::before,
+    .right-round .blue-bg-right::before {
+        display: none;
+    }
+
     .blue-bg {
         margin: 30px 0;
     }
@@ -97,20 +103,20 @@
         padding: 26px 0;
     }
 
-    .blue-bg-left,
+    /* .blue-bg-left,
     .blue-bg-right {
         display: none;
-    }
+    } */
 
     /* .left-round .blue-bg-left,
     .left-round .blue-bg-right {
         display: block;
     } */
 
-    .left-round .blue-bg-left::before {
+    .right-round .blue-bg-left {
         display: none;
     }
-
+    
     .right-round .blue-bg {
         border-radius: 0 100px 100px 0;
         width: 98%;

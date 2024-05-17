@@ -2,7 +2,7 @@
 
 html,
 body {
-    overflow-x: hidden;
+    overflow-x: hidden !important;
 }
 
 body {
@@ -10,31 +10,31 @@ body {
 }
 
 h1 {
-    font-size: 48px;
+    font-size: 48px !important;
 
     @media (max-width: 991px) {
-        font-size: 32px;
+        font-size: 32px !important;
     }
 }
 
 h2 {
-    font-size: 32px;
+    font-size: 32px !important;
 }
 
 h3 {
-    font-size: 28px;
+    font-size: 28px !important;
 }
 
 h4 {
-    font-size: 22px;
+    font-size: 22px !important;
 }
 
 h5 {
-    font-size: 20px;
+    font-size: 20px !important;
 }
 
 h6 {
-    font-size: 16px;
+    font-size: 16px !important;
 }
 
 h1,
@@ -43,12 +43,12 @@ h3,
 h4,
 h5,
 h6 {
-    line-height: 110%;
-    margin-bottom: 0;
+    line-height: 110% !important;
+    margin-bottom: 0 !important;
 }
 
 p {
-    font-size: 16px;
+    font-size: 16px !important;
 }
 
 .bold {
@@ -129,60 +129,60 @@ sup {
 
 .accordion-button {
     border-radius: 20px !important;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 110%;
-    color: #0460A9;
-    padding: 30px 30px 15px;
-    position: relative;
-    display: flex;
-    align-items: center;
-    width: 100%;
-    text-align: left;
-    background-color: #fff;
-    border: 0;
+    font-size: 20px !important;
+    font-style: normal !important;
+    font-weight: 600 !important;
+    line-height: 110% !important;
+    color: #0460A9 !important;
+    padding: 30px 30px 15px !important;
+    position: relative !important;
+    display: flex !important;
+    align-items: center !important;
+    width: 100% !important;
+    text-align: left !important;
+    background-color: #fff !important;
+    border: 0 !important;
 }
 
 .accordion-button.collapsed {
-    padding-bottom: 30px;
+    padding-bottom: 30px !important;
 }
 
 .accordion-button::after {
-    content: "";
-    position: absolute;
-    width: unset;
-    height: unset;
-    background-image: none;
-    right: 30px;
-    border: solid #0460A9;
-    border-width: 0 2px 2px 0;
-    display: inline-block;
-    padding: 4.5px;
-    transform: rotate(45deg);
+    content: "" !important;
+    position: absolute !important;
+    width: unset !important;
+    height: unset !important;
+    background-image: none !important;
+    right: 30px !important;
+    border: solid #0460A9 !important;
+    border-width: 0 2px 2px 0 !important;
+    display: inline-block !important;
+    padding: 4.5px !important;
+    transform: rotate(45deg) !important;
 }
 
 .accordion-button::before {
-    content: 'collapse';
-    position: absolute;
-    right: 55px;
-    text-transform: uppercase;
-    top: 57%;
-    transform: translateY(-50%);
+    content: 'collapse' !important;
+    position: absolute !important;
+    right: 55px !important;
+    text-transform: uppercase !important;
+    top: 57% !important;
+    transform: translateY(-50%) !important;
 }
 
 .accordion-button:not(.collapsed)::after {
-    background-image: none;
+    background-image: none !important;
     transform: rotate(-135deg);
 }
 
 .accordion-button.collapsed::before {
-    content: 'expand';
-    top: 52%;
+    content: 'expand' !important;
+    top: 52% !important;
 }
 
 .accordion-button:not(.collapsed) {
-    background-color: unset;
+    background-color: unset !important;
     border-radius: unset !important;
     border-bottom: unset !important;
     color: #0460A9;
@@ -190,8 +190,8 @@ sup {
 }
 
 .accordion-button:focus {
-    border-color: unset;
-    box-shadow: unset;
+    border-color: unset !important;
+    box-shadow: unset !important;
 }
 
 .accordion-button:focus:not(:focus-visible) {
@@ -239,11 +239,11 @@ sup {
     }
 
     .accordion-button::before {
-        font-size: 14px;
+        font-size: 14px !important;
     }
 
     .accordion-button {
-        padding-right: 140px;
+        padding-right: 140px !important;
     }
 
     .treatment-wyost {
@@ -346,6 +346,7 @@ sup {
 
 .isi-section ul {
     padding-left: 0;
+    list-style: disc;
 }
 
 .isi-section ul li {
@@ -367,6 +368,9 @@ sup {
 
 .first-paragraph {
     color: #4D4D57 !important;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 140%;
 }
 
 .last-paragraph {
@@ -400,7 +404,7 @@ sup {
 
 @media (min-width: 768px) and (max-width: 991px) {
     .icon-moon-container {
-        top: -2.8rem;
+        top: -2.5rem;
     }
 }
 

@@ -78,7 +78,7 @@
 
 .right-dots {
     /* position: relative; */
-    height: 100%;
+    height: auto;
 }
 
 .mobile-content {

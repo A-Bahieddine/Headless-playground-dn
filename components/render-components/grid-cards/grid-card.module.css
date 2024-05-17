@@ -69,4 +69,8 @@
     .pt {
         padding-top: 30px;
     }
+
+    .card-with-image img {
+        width: 100%;
+    }
 }
