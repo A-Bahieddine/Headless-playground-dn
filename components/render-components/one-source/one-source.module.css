@@ -26,7 +26,7 @@
     letter-spacing: -0.2px;
     margin-bottom: 14px;
     color: #0460A9;
-    font-size: 28px;
+    font-size: 28px !important;
 }
 
 .img-text-container .text p {
