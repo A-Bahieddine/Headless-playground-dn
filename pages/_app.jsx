@@ -1,4 +1,4 @@
-import '@pantheon-systems/nextjs-kit/style.css';
+// import '@pantheon-systems/nextjs-kit/style.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import '../styles/aos.css';
 // import '../styles/hero.css';
