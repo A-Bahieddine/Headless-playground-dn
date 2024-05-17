@@ -44,7 +44,6 @@ h4,
 h5,
 h6 {
     line-height: 110% !important;
-    margin-bottom: 0 !important;
 }
 
 p {
@@ -308,7 +307,7 @@ sup {
 .icon-moon-container {
     position: absolute;
     right: 0px;
-    top: -2.6rem;
+    top: -2rem;
     cursor: pointer;
 }
 
